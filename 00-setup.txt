@@ -1,0 +1,19 @@
+conda create --name flwr-env python=3.9 -y
+conda install -c conda-forge cudatoolkit=11.2 cudnn=8.1.0
+pip install tensorflow==2.10 flwr
+set TF_FORCE_GPU_ALLOW_GROWTH=true
+
+conda activate
+conda activate flwr-env
+
+#in 1st terminal run this (in env) 
+python start_fl_server.py
+
+#in 2nd terminal run this (in env) 
+python start_fl_client.py
+
+#in 3rd terminal run this (in env) 
+# note: if you wanna run more then 1 client then it need some adjustments
+python start_fl_client2.py 
+
+
